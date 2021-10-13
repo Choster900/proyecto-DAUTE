@@ -25,7 +25,7 @@
             <!--First slide-->
             <div class="carousel-item active">
                 <div class="view h-100">
-                    <img class="d-block h-100 w-lg-100" src="https://mdbootstrap.com/img/Photos/Others/ecommerce4.jpg" alt="First slide">
+                    <img class="d-block h-100 w-lg-100" src="http://localhost/img/banner1.jpg" alt="First slide">
                     <div class="mask">
                         <!-- Caption -->
                         <div class="full-bg-img flex-center white-text">
@@ -360,7 +360,15 @@
                                 </div>
                             </div>
                         </li>
-
+                        <li class="nav-item dropdown ml-3">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light dark-grey-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user red-text"></i> Administrador </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                                <a class="dropdown-item waves-effect waves-light" href="http://localhost:8080/project/products/home.jsp">Productos</a>
+                                <a class="dropdown-item waves-effect waves-light" href="#">Reportes</a>
+                            </div>
+                        </li>
                     </ul>
                     <!-- Links -->
 
@@ -404,7 +412,7 @@
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <a class="dark-grey-text font-small">
-                                        <i class="fa fa-laptop dark-grey-text mr-2" aria-hidden="true"></i> Laptops</a>
+                                        <i class="fa fa-laptop dark-grey-text mr-2" aria-hidden="true"></i> Laptops esto se gestionara por categorias</a>
                                     <a href=""></a>
                                     <span class="badge badge-danger badge-pill">43</span>
                                     </a>

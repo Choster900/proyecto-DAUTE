@@ -12,7 +12,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+        
+        <link rel="shortcut icon" href="https://www.vippng.com/png/full/37-370383_file-emoji-u1f377-svg-emoji-copa-de-vino.png" type="image/x-ico">
         <title>Amates del vino</title>
 
         <!-- Font Awesome -->
