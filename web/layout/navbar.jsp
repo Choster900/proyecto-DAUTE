@@ -11,7 +11,7 @@
             <!-- Logo -->
             <li>
                 <div class="logo-wrapper waves-light">
-                    <a href="#">
+                    <a href="http://localhost:8080/project/homepage.jsp">
                         <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
                     </a>
                 </div>
@@ -149,7 +149,7 @@
                         <i class="fa fa-bars"></i>
                     </a>
                 </div>
-                <a class="navbar-brand font-weight-bold" href="#">
+                <a class="navbar-brand font-weight-bold" href="http://localhost:8080/project/homepage.jsp">
                     <strong>SHOP</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
