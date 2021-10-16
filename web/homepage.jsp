@@ -25,7 +25,7 @@
             <!--First slide-->
             <div class="carousel-item active">
                 <div class="view h-100">
-                    <img class="d-block h-100 w-lg-100" src="http://localhost/img/banner1.jpg" alt="First slide">
+                    <img class="d-block h-100 w-lg-100" src="https://mdbootstrap.com/img/Photos/Others/ecommerce1.jpg" alt="First slide">
                     <div class="mask">
                         <!-- Caption -->
                         <div class="full-bg-img flex-center white-text">
