@@ -4,9 +4,25 @@
         <servlet-name>ProductoServlet</servlet-name>
         <servlet-class>Controller.ProductoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Signup</servlet-name>
+        <servlet-class>Controller.Signup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>signupServlet</servlet-name>
+        <servlet-class>Controller.signupServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/ProductoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Signup</servlet-name>
+        <url-pattern>/Signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>signupServlet</servlet-name>
+        <url-pattern>/signupServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
