@@ -55,4 +55,24 @@ public class Signup extends ClsConexion {
         }
         return codeUser;
     }
+     public int getTypeSuscri(String nickname, String pass) {
+        int typeSub = 0;
+        try {
+            this.conectar();
+            String sql = "SELECT TIPO_SUSCRIPCION FROM USUARIO WHERE NICKNAME=? AND PASS=?";
+            PreparedStatement pre = this.getConexion().prepareStatement(sql);
+            pre.setString(1, nickname);
+            pre.setString(2, pass);
+            ResultSet rs;
+            rs = pre.executeQuery();
+            while (rs.next()) {
+                typeSub = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        } finally {
+            this.desconectar();
+        }
+        return typeSub;
+    }
 }

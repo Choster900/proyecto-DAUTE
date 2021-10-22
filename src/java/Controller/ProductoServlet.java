@@ -92,7 +92,7 @@ public class ProductoServlet extends HttpServlet {
             Double precio = Double.parseDouble(req.getParameter("txtPrecio"));
             int estado = Integer.parseInt(req.getParameter("sEstado"));
             int stok = Integer.parseInt(req.getParameter("txtStok"));
-            int categoria = Integer.parseInt(req.getParameter("sEstado"));
+            int categoria = Integer.parseInt(req.getParameter("sCategoria"));
 
             Part part = req.getPart("foto");
             if (part == null) {

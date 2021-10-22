@@ -14,6 +14,7 @@
             ses.setAttribute("usuario", request.getAttribute("usuario"));
             ses.setAttribute("nivel", nivel);
             ses.setAttribute("codigo", request.getAttribute("codigo"));
+            ses.setAttribute("typeSub", request.getAttribute("typeSub"));
 
             response.sendRedirect("homepage.jsp");
 

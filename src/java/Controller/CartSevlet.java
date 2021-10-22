@@ -5,19 +5,23 @@
  */
 package Controller;
 
-import Model.Signup;
+import Model.CarritoDAO;
+import Model.ClsCart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author 16ado
  */
-public class signupServlet extends HttpServlet {
+public class CartSevlet extends HttpServlet {
+
+    CarritoDAO carrito = new CarritoDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,28 +32,37 @@ public class signupServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    ClsCart cart = new ClsCart();
+    CarritoDAO daocart = new CarritoDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Signup log = new Signup();
-            if (request.getParameter("btnSignup") != null) {
-                String usuario = request.getParameter("UserEmail");
-                String clave = request.getParameter("Pasword");
-
-                int nivel = log.getRol(usuario, clave);
-                int codigo = log.getCodigoUsuario(usuario, clave);
-                int typeSub = log.getTypeSuscri(usuario, clave);
-
-                request.setAttribute("nivel", nivel);
-                request.setAttribute("usuario", usuario);
-                request.setAttribute("codigo", codigo);
-                request.setAttribute("typeSub", typeSub);
-
-                request.getRequestDispatcher("ValidarAcceso.jsp").forward(request, response);
-
+            if (request.getParameter("user") != null) {
+                insertCarrito(request, response);
+                int code = (Integer.parseInt(request.getParameter("prod")));
+                request.getRequestDispatcher("products/viewproduct.jsp?product="+code).forward(request, response);
+            } 
+            else if (request.getParameter("btnElimiarCart") != null) {
+                int code = (Integer.parseInt(request.getParameter("btnElimiarCart")));
+                cart.setCodigoCarrito(code);
+                daocart.delete_carrito(cart);
+                request.getRequestDispatcher("Logistics/cart.jsp").forward(request, response);
             }
         }
+    }
+
+    private void insertCarrito(HttpServletRequest req, HttpServletResponse res) {
+        try {
+            cart.setCodigoUsuario(Integer.parseInt(req.getParameter("user")));
+            cart.setCodigoProducto(Integer.parseInt(req.getParameter("prod")));
+            cart.setTipo_suscripcion(Integer.parseInt(req.getParameter("typeSub")));
+            daocart.insertCarrito_de_compras(cart);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

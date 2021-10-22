@@ -61,35 +61,33 @@
             <ul class="collapsible collapsible-accordion">
                 <li>
                     <a class="collapsible-header waves-effect arrow-r">
-                        <i class="fa fa-shopping-cart"></i> Cart page
+                        <i class="fa fa-shopping-cart"></i> Carrito
                         <i class="fa fa-angle-down rotate-icon"></i>
                     </a>
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="../cart/cart-v1.html" class="waves-effect">Cart V.1</a>
+                                <a href="${pageContext.request.contextPath}/Logistics/cart.jsp" class="waves-effect">Carrito de compras</a>
                             </li>
-                            <li>
-                                <a href="../cart/cart-v2.html" class="waves-effect">Cart V.2</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </li>
                 <li>
                     <a class="collapsible-header waves-effect arrow-r">
-                        <i class="fa fa-hand-pointer-o"></i> Category page
+                        <i class="fa fa-hand-pointer-o"></i> Category
                         <i class="fa fa-angle-down rotate-icon"></i>
                     </a>
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="../category/category-v1.html" class="waves-effect">Category V.1</a>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=1" class="waves-effect">Muebles</a>
                             </li>
                             <li>
-                                <a href="../category/category-v2.html" class="waves-effect">Category V.2</a>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=2" class="waves-effect">Decoracion</a>
                             </li>
                             <li>
-                                <a href="../category/category-v3.html" class="waves-effect">Category V.3</a>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=3" class="waves-effect">Vinos</a>
                             </li>
                             <li>
                                 <a href="../category/category-v4.html" class="waves-effect">Category V.4</a>
@@ -154,7 +152,7 @@
                 </a>
             </div>
             <a class="navbar-brand font-weight-bold" href="http://localhost:8080/project/homepage.jsp">
-                <strong>SHOP</strong>
+                <strong>amantes del vino</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
                     aria-expanded="false" aria-label="Toggle navigation">

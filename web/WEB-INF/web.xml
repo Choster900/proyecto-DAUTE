@@ -12,6 +12,10 @@
         <servlet-name>signupServlet</servlet-name>
         <servlet-class>Controller.signupServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CartSevlet</servlet-name>
+        <servlet-class>Controller.CartSevlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/ProductoServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>signupServlet</servlet-name>
         <url-pattern>/signupServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartSevlet</servlet-name>
+        <url-pattern>/CartSevlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

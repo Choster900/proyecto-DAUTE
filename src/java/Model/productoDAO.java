@@ -36,7 +36,7 @@ public class productoDAO extends ClsConexion {
                     + "    PRODUCTOS P\n"
                     + "        INNER JOIN\n"
                     + "    CATEGORIA C\n"
-                    + "WHERE\n"
+                    + "ON\n"
                     + "    P.CATEGORIA_ID = C.ID;";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             ResultSet rs;
@@ -84,7 +84,7 @@ public class productoDAO extends ClsConexion {
                     + "    PRODUCTOS P\n"
                     + "        INNER JOIN\n"
                     + "    CATEGORIA C\n"
-                    + "WHERE\n"
+                    + "ON\n"
                     + "    P.CATEGORIA_ID = C.ID ORDER BY RAND() LIMIT 3;";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             ResultSet rs;
@@ -112,6 +112,7 @@ public class productoDAO extends ClsConexion {
         }
         return lista;
     }
+
     public ArrayList<ClsProducto> topSeller() {
         ArrayList<ClsProducto> lista = new ArrayList<>();
         try {
@@ -131,7 +132,7 @@ public class productoDAO extends ClsConexion {
                     + "    PRODUCTOS P\n"
                     + "        INNER JOIN\n"
                     + "    CATEGORIA C\n"
-                    + "WHERE\n"
+                    + "ON\n"
                     + "    P.CATEGORIA_ID = C.ID ORDER BY VECES_VENDIDO DESC LIMIT 3;";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             ResultSet rs;
@@ -158,7 +159,9 @@ public class productoDAO extends ClsConexion {
             this.desconectar();
         }
         return lista;
-    }    public ArrayList<ClsProducto> newProducto() {
+    }
+
+    public ArrayList<ClsProducto> newProducto() {
         ArrayList<ClsProducto> lista = new ArrayList<>();
         try {
             this.conectar();
@@ -177,7 +180,7 @@ public class productoDAO extends ClsConexion {
                     + "    PRODUCTOS P\n"
                     + "        INNER JOIN\n"
                     + "    CATEGORIA C\n"
-                    + "WHERE\n"
+                    + "ON\n"
                     + "    P.CATEGORIA_ID = C.ID ORDER BY ID DESC LIMIT 3;";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             ResultSet rs;
@@ -205,7 +208,6 @@ public class productoDAO extends ClsConexion {
         }
         return lista;
     }
-    
 
     public void insertProductos(ClsProducto p) {
         try {
@@ -291,6 +293,101 @@ public class productoDAO extends ClsConexion {
                 c.setStok(rs.getInt(6));
                 c.setRutaImagen(rs.getString(7));
                 c.setCodigoCategoria(rs.getInt(8));
+                lista.add(c);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.getMessage());
+
+        } finally {
+            this.desconectar();
+        }
+        return lista;
+    }
+
+    public ArrayList<ClsProducto> typeCategory(int categoria) {
+        ArrayList<ClsProducto> lista = new ArrayList<>();
+        try {
+            this.conectar();
+            String sql = "SELECT \n"
+                    + "    P.ID,\n"
+                    + "    P.NOMBRE,\n"
+                    + "    DESCRIPCION,\n"
+                    + "    PRECIO,\n"
+                    + "    IF(ESTADO = 1,\n"
+                    + "        'Disponible',\n"
+                    + "        'No disponible') as estado,\n"
+                    + "	STOK,\n"
+                    + "    FOTO,\n"
+                    + "    C.NOMBRE AS CATEGORIA\n"
+                    + "FROM\n"
+                    + "    PRODUCTOS P\n"
+                    + "        INNER JOIN\n"
+                    + "    CATEGORIA C\n"
+                    + "ON\n"
+                    + "    P.CATEGORIA_ID = C.ID WHERE P.CATEGORIA_ID = " + categoria;
+            PreparedStatement pre = this.getConexion().prepareStatement(sql);
+            ResultSet rs;
+
+            rs = pre.executeQuery();
+
+            while (rs.next()) {
+                ClsProducto c = new ClsProducto();
+                c.setCodigoProducot(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setDescripcion(rs.getString(3));
+                c.setPrecio(rs.getDouble(4));
+                c.setEstadoVent(rs.getString(5));
+                c.setStok(rs.getInt(6));
+                c.setRutaImagen(rs.getString(7));
+                c.setNombreCategoria(rs.getString(8));
+                lista.add(c);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.getMessage());
+
+        } finally {
+            this.desconectar();
+        }
+        return lista;
+    }
+     public ArrayList<ClsProducto> footerRamdonProducts() {
+        ArrayList<ClsProducto> lista = new ArrayList<>();
+        try {
+            this.conectar();
+            String sql = "SELECT \n"
+                    + "    P.ID,\n"
+                    + "    P.NOMBRE,\n"
+                    + "    DESCRIPCION,\n"
+                    + "    PRECIO,\n"
+                    + "    IF(ESTADO = 1,\n"
+                    + "        'Disponible',\n"
+                    + "        'No disponible') as estado,\n"
+                    + "	STOK,\n"
+                    + "    FOTO,\n"
+                    + "    C.NOMBRE AS CATEGORIA\n"
+                    + "FROM\n"
+                    + "    PRODUCTOS P\n"
+                    + "        INNER JOIN\n"
+                    + "    CATEGORIA C\n"
+                    + "ON\n"
+                    + "    P.CATEGORIA_ID = C.ID ORDER BY RAND();";
+            PreparedStatement pre = this.getConexion().prepareStatement(sql);
+            ResultSet rs;
+
+            rs = pre.executeQuery();
+
+            while (rs.next()) {
+                ClsProducto c = new ClsProducto();
+                c.setCodigoProducot(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setDescripcion(rs.getString(3));
+                c.setPrecio(rs.getDouble(4));
+                c.setEstadoVent(rs.getString(5));
+                c.setStok(rs.getInt(6));
+                c.setRutaImagen(rs.getString(7));
+                c.setNombreCategoria(rs.getString(8));
                 lista.add(c);
             }
 
