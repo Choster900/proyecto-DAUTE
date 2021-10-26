@@ -16,6 +16,14 @@
         <servlet-name>CartSevlet</servlet-name>
         <servlet-class>Controller.CartSevlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>createServlet</servlet-name>
+        <servlet-class>Controller.createServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DireccionServlet</servlet-name>
+        <servlet-class>Controller.DireccionServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/ProductoServlet</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>CartSevlet</servlet-name>
         <url-pattern>/CartSevlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createServlet</servlet-name>
+        <url-pattern>/createServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DireccionServlet</servlet-name>
+        <url-pattern>/DireccionServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

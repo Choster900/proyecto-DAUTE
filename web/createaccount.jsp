@@ -92,14 +92,13 @@
                     <div class="col-md-12">
 
                         <div class="card">
-                            <form>
+                            <form method='POST' action='createServlet' enctype='multipart/form-data'>
                                 <div class="card-body">
 
                                     <h2 class="font-weight-bold my-4 text-center mb-5 mt-4 font-weight-bold">
                                         <strong>REGISTER</strong>
                                     </h2>
                                     <hr>
-
                                     <!--Grid row-->
                                     <div class="row mt-5">
 
@@ -145,14 +144,14 @@
                                                     <h4 class="font-weight-bold mb-4">
                                                         <strong>Fotografia</strong>
                                                     </h4>
-                                                        <div class="file-field">
-                                                            <div class="btn btn-dark btn-sm float-left">
-                                                                <span class="ligth-text">Necesita una foto</span>
-                                                                <input type="file" required="required">
-                                                            </div>
-
+                                                    <div class="file-field">
+                                                        <div class="btn btn-dark btn-sm float-left">
+                                                            <span class="ligth-text">Necesita una foto</span>
+                                                            <input type="file" name="foto"> 
                                                         </div>
-                                                
+
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <!--Grid row-->
@@ -192,18 +191,18 @@
                                             <!--Body-->
                                             <div class="md-form">
                                                 <i class="fa fa-user prefix"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control">
+                                                <input type="text" id="orangeForm-name" class="form-control" name="Name">
                                                 <label for="orangeForm-name">Your name</label>
                                             </div>
                                             <div class="md-form">
                                                 <i class="fa fa-envelope prefix"></i>
-                                                <input type="text" id="orangeForm-email" class="form-control">
+                                                <input type="email" id="orangeForm-email" class="form-control" name="email">
                                                 <label for="orangeForm-email">Your email</label>
                                             </div>
 
                                             <div class="md-form">
                                                 <i class="fa fa-lock prefix"></i>
-                                                <input type="password" id="orangeForm-pass" class="form-control">
+                                                <input type="password" id="orangeForm-pass" class="form-control" name="password">
                                                 <label for="orangeForm-pass">Your password</label>
                                             </div>
                                             <div class="md-form">
@@ -211,24 +210,24 @@
                                                     <div class="col-6">
 
                                                         <fieldset class="form-check mb-4">
-                                                            <input class="form-check-input" name="tipoSuscripcion" type="radio" id="radio1" checked="checked">
+                                                            <input class="form-check-input" name="tipoSuscripcion" type="radio" id="radio1" checked="checked" value="1">
                                                             <label class="form-check-label" for="radio1">Estandar</label>
                                                         </fieldset>
 
                                                         <fieldset class="form-check mb-4">
-                                                            <input class="form-check-input" name="tipoSuscripcion" type="radio" id="radio2">
+                                                            <input class="form-check-input" name="tipoSuscripcion" type="radio" id="radio2" value="2">
                                                             <label class="form-check-label" for="radio2">Premiun</label>
                                                         </fieldset>
                                                     </div>
                                                     <div class="col-6">
 
                                                         <fieldset class="form-check mb-4">
-                                                            <input class="form-check-input" name="genero" type="radio" id="radio3" checked="checked">
+                                                            <input class="form-check-input" name="genero" type="radio" id="radio3" checked="checked" value="Masculino">
                                                             <label class="form-check-label" for="radio3">Masculino</label>
                                                         </fieldset>
 
                                                         <fieldset class="form-check mb-4">
-                                                            <input class="form-check-input" name="genero" type="radio" id="radio4">
+                                                            <input class="form-check-input" name="genero" type="radio" id="radio4" value="Femeinino">
                                                             <label class="form-check-label" for="radio4">Femenino</label>
                                                         </fieldset>
                                                     </div>
@@ -239,7 +238,9 @@
 
 
                                             <div class="text-center">
-                                                <button class="btn btn-indigo btn-rounded mt-5">Sign up</button>
+                                                <button class="btn btn-indigo btn-rounded mt-5"
+                                                        name="btnCreate"
+                                                        >Create Account</button>
                                             </div>
 
                                         </div>

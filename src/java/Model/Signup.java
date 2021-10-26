@@ -6,6 +6,8 @@
 package Model;
 
 import Conexion.ClsConexion;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -22,7 +24,7 @@ public class Signup extends ClsConexion {
             String sql = "SELECT ROL_ID FROM USUARIO WHERE NICKNAME=? AND PASS=?";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             pre.setString(1, nickname);
-            pre.setString(2, pass);
+            pre.setString(2, getMD5(pass));
             ResultSet rs;
             rs = pre.executeQuery();
             while (rs.next()) {
@@ -42,7 +44,7 @@ public class Signup extends ClsConexion {
             String sql = "SELECT ID FROM USUARIO WHERE NICKNAME=? AND PASS=?";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             pre.setString(1, nickname);
-            pre.setString(2, pass);
+            pre.setString(2, getMD5(pass));
             ResultSet rs;
             rs = pre.executeQuery();
             while (rs.next()) {
@@ -62,7 +64,7 @@ public class Signup extends ClsConexion {
             String sql = "SELECT TIPO_SUSCRIPCION FROM USUARIO WHERE NICKNAME=? AND PASS=?";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             pre.setString(1, nickname);
-            pre.setString(2, pass);
+            pre.setString(2, getMD5(pass));
             ResultSet rs;
             rs = pre.executeQuery();
             while (rs.next()) {
@@ -75,4 +77,19 @@ public class Signup extends ClsConexion {
         }
         return typeSub;
     }
+     
+     public String getMD5(String password){
+         try {
+             MessageDigest md = MessageDigest.getInstance("MD5");
+             byte[] encBytes = md.digest(password.getBytes());
+             BigInteger numero = new BigInteger(1,encBytes);
+             String encString = numero.toString(16);
+             while (encString.length()<32) {
+                 encString = "0"+encString;
+             }
+             return encString;
+         } catch (Exception e) {
+             throw new RuntimeException(e);
+         }
+     }
 }

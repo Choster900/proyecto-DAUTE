@@ -5,8 +5,9 @@
  */
 package Controller;
 
-import Model.ClsProducto;
-import Model.productoDAO;
+import Model.ClsUsuarios;
+import Model.Signup;
+import Model.usuarioDAO;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,40 +25,48 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sergio-Lopez
+ * @author 16ado
  */
 @MultipartConfig
-public class ProductoServlet extends HttpServlet {
+public class createServlet extends HttpServlet {
 
     private String pathFile = "C:\\xampp\\htdocs\\serverProject";
     private File uploads = new File(pathFile);
     private String[] extens = {"ico", "png", "jpg", "jpeg"};
 
-    ClsProducto producto = new ClsProducto();
-    productoDAO DAOp = new productoDAO();
+    ClsUsuarios user = new ClsUsuarios();
+    usuarioDAO daoUser = new usuarioDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            if (request.getParameter("btnAgregarProducto") != null) {
-                saveProducto(request, response);
-                request.getRequestDispatcher("products/home.jsp").forward(request, response);
-            }else if(request.getParameter("btnEditarProducto")!=null){
-                updateProducto(request, response);
-                request.getRequestDispatcher("products/home.jsp").forward(request, response);
+            if (request.getParameter("btnCreate") != null) {
+                createUser(request, response);
+
+                Signup sign = new Signup();
+                String usuario = request.getParameter("Name");
+                String clave = request.getParameter("password");
+                int code = sign.getCodigoUsuario(usuario, clave);
+
+                request.setAttribute("codigo", code);
+
+                request.getRequestDispatcher("address.jsp").forward(request, response);
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+
         }
     }
-    private void updateProducto(HttpServletRequest req, HttpServletResponse res) {
+
+    private void createUser(HttpServletRequest req, HttpServletResponse res) {
         try {
-            int codigo = Integer.parseInt(req.getParameter("productoID"));
-            String nombre = req.getParameter("txtNombre");
-            String descrip = req.getParameter("txtDescripcion");
-            Double precio = Double.parseDouble(req.getParameter("txtPrecio"));
-            int estado = Integer.parseInt(req.getParameter("sEstado"));
-            int stok = Integer.parseInt(req.getParameter("txtStok"));
-            int categoria = Integer.parseInt(req.getParameter("sCategoria"));
+            String nombre = req.getParameter("Name");
+            String email = req.getParameter("email");
+            String password = req.getParameter("password");
+            int rol = 3;
+            int typeSub = Integer.parseInt(req.getParameter("tipoSuscripcion"));
+            String genero = req.getParameter("genero");
 
             Part part = req.getPart("foto");
             if (part == null) {
@@ -67,57 +76,20 @@ public class ProductoServlet extends HttpServlet {
             if (isExtension(part.getSubmittedFileName(), extens)) {
                 String photo = saveFile(part, uploads);
 
-                //empleado emp = new empleado(name, age, "http://localhost/img/" + part.getSubmittedFileName(),usuario_id, depa);
-                producto.setCodigoProducot(codigo);
-                producto.setNombre(nombre);
-                producto.setDescripcion(descrip);
-                producto.setPrecio(precio);
-                producto.setEstadoVenta(estado);
-                producto.setStok(stok);
-                producto.setCodigoCategoria(categoria);
-                producto.setRutaImagen("http://localhost/serverProject/" + part.getSubmittedFileName());
+                user.setName(nombre);
+                user.setEmail(email);
+                user.setPass(password);
+                user.setRol(rol);
+                user.setTypeSub(typeSub);
+                user.setGenero(genero);
+                user.setFoto("http://localhost/serverProject/" + part.getSubmittedFileName());
 
-                //daoEmp.insertEmpleado(emp);
-                DAOp.updateProduct(producto);
-
+                daoUser.insertUser(user);
             }
 
         } catch (Exception e) {
-        }
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
 
-    }
-    private void saveProducto(HttpServletRequest req, HttpServletResponse res) {
-        try {
-            String nombre = req.getParameter("txtNombre");
-            String descrip = req.getParameter("txtDescripcion");
-            Double precio = Double.parseDouble(req.getParameter("txtPrecio"));
-            int estado = Integer.parseInt(req.getParameter("sEstado"));
-            int stok = Integer.parseInt(req.getParameter("txtStok"));
-            int categoria = Integer.parseInt(req.getParameter("sCategoria"));
-
-            Part part = req.getPart("foto");
-            if (part == null) {
-                System.out.println("controllers.empServlet.saveEmpleado() no se ha seleccionado archivo");
-                return;
-            }
-            if (isExtension(part.getSubmittedFileName(), extens)) {
-                String photo = saveFile(part, uploads);
-
-                //empleado emp = new empleado(name, age, "http://localhost/img/" + part.getSubmittedFileName(),usuario_id, depa);
-                producto.setNombre(nombre);
-                producto.setDescripcion(descrip);
-                producto.setPrecio(precio);
-                producto.setEstadoVenta(estado);
-                producto.setStok(stok);
-                producto.setCodigoCategoria(categoria);
-                producto.setRutaImagen("http://localhost/serverProject/" + part.getSubmittedFileName());
-
-                //daoEmp.insertEmpleado(emp);
-                DAOp.insertProductos(producto);
-
-            }
-
-        } catch (Exception e) {
         }
 
     }

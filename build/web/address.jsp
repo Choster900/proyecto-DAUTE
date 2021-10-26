@@ -1,17 +1,20 @@
-<%-- 
-    Document   : createaccount
-    Created on : 10-15-2021, 08:19:14 PM
-    Author     : 16ado
---%>
 
+<%@page import="Model.ClsCategorias"%>
+<%@page import="Model.departamentosDAO"%>
+<%@page import="Model.ClsDepartamentos"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="layout/header.jsp" %>
+<%!
+    departamentosDAO depa = new departamentosDAO();
+    ArrayList<ClsDepartamentos> listarDepa = new ArrayList<>();
+%>
 <style>
     html,
     body,
     header,
     .view {
-        height: 100%;
+        height: 108%;
     }
 
     @media (max-width: 740px) {
@@ -19,7 +22,7 @@
         body,
         header,
         .view {
-            height: 1500px;
+            height: 1400px;
         }
     }
 
@@ -90,159 +93,165 @@
 
                     <!--Grid column-->
                     <div class="col-md-12">
+                        <form action="DireccionServlet" method="POST">
+                            <div class="card">
+                                <div class="card-body">
 
-                        <div class="card">
-                            <div class="card-body">
+                                    <h2 class="font-weight-bold my-4 text-center mb-5 mt-4 font-weight-bold">
+                                        <strong>REGISTER</strong>
+                                    </h2>
+                                    <hr>
 
-                                <h2 class="font-weight-bold my-4 text-center mb-5 mt-4 font-weight-bold">
-                                    <strong>REGISTER</strong>
-                                </h2>
-                                <hr>
+                                    <!--Grid row-->
+                                    <div class="row mt-5">
 
-                                <!--Grid row-->
-                                <div class="row mt-5">
+                                        <!--Grid column-->
+                                        <div class="col-md-6 ml-lg-5 ml-md-3">
 
-                                    <!--Grid column-->
-                                    <div class="col-md-6 ml-lg-5 ml-md-3">
-
-                                        <!--Grid row-->
-                                        <div class="row pb-4">
-                                            <div class="col-2 col-lg-1">
-                                                <i class="fa fa-bank indigo-text fa-lg"></i>
+                                            <!--Grid row-->
+                                            <div class="row pb-4">
+                                                <div class="col-2 col-lg-1">
+                                                    <i class="fa fa-bank indigo-text fa-lg"></i>
+                                                </div>
+                                                <div class="col-10">
+                                                    <h4 class="font-weight-bold mb-4">
+                                                        <strong>Safety</strong>
+                                                    </h4>
+                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                                        minima assumenda deleniti hic.</p>
+                                                </div>
                                             </div>
-                                            <div class="col-10">
-                                                <h4 class="font-weight-bold mb-4">
-                                                    <strong>Safety</strong>
+                                            <!--Grid row-->
+
+                                            <!--Grid row-->
+                                            <div class="row pb-4">
+                                                <div class="col-2 col-lg-1">
+                                                    <i class="fa fa-desktop deep-purple-text fa-lg"></i>
+                                                </div>
+                                                <div class="col-10">
+                                                    <h4 class="font-weight-bold mb-4">
+                                                        <strong>Technology</strong>
+                                                    </h4>
+                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                                        minima assumenda deleniti hic.</p>
+                                                </div>
+                                            </div>
+                                            <!--Grid row-->
+
+                                            <!--Grid row-->
+                                            <div class="row pb-4">
+                                                <div class="col-2 col-lg-1">
+                                                    <i class="fa fa-money purple-text fa-lg"></i>
+                                                </div>
+                                                <div class="col-10">
+                                                    <h4 class="font-weight-bold mb-4">
+                                                        <strong>Finance</strong>
+                                                    </h4>
+                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                                        minima assumenda deleniti hic.</p>
+                                                </div>
+                                            </div>
+                                            <!--Grid row-->
+
+                                        </div>
+                                        <!--Grid column-->
+
+                                        <!--Grid column-->
+                                        <div class="col-md-5">
+
+                                            <!--Grid row-->
+                                            <div class="row pb-4 d-flex justify-content-center mb-4">
+
+                                                <h4 class="mt-3 mr-4">
+                                                    <strong>Login with</strong>
                                                 </h4>
-                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                                    minima assumenda deleniti hic.</p>
-                                            </div>
-                                        </div>
-                                        <!--Grid row-->
 
-                                        <!--Grid row-->
-                                        <div class="row pb-4">
-                                            <div class="col-2 col-lg-1">
-                                                <i class="fa fa-desktop deep-purple-text fa-lg"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <h4 class="font-weight-bold mb-4">
-                                                    <strong>Technology</strong>
+                                                <div class="inline-ul text-center d-flex justify-content-center">
+                                                    <a class="p-2 m-2 fa-lg tw-ic">
+                                                        <i class="fa fa-twitter fa-lg indigo-text"></i>
+                                                    </a>
+                                                    <a class="p-2 m-2 fa-lg li-ic">
+                                                        <i class="fa fa-linkedin fa-lg indigo-text"> </i>
+                                                    </a>
+                                                    <a class="p-2 m-2 fa-lg ins-ic">
+                                                        <i class="fa fa-instagram fa-lg indigo-text"> </i>
+                                                    </a>
+                                                </div>
+
+                                                <h4 class="mt-3 ml-4">
+                                                    <strong>or:</strong>
                                                 </h4>
-                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                                    minima assumenda deleniti hic.</p>
+
                                             </div>
-                                        </div>
-                                        <!--Grid row-->
+                                            <!--/Grid row-->
 
-                                        <!--Grid row-->
-                                        <div class="row pb-4">
-                                            <div class="col-2 col-lg-1">
-                                                <i class="fa fa-money purple-text fa-lg"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <h4 class="font-weight-bold mb-4">
-                                                    <strong>Finance</strong>
-                                                </h4>
-                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                                    minima assumenda deleniti hic.</p>
-                                            </div>
-                                        </div>
-                                        <!--Grid row-->
-
-                                    </div>
-                                    <!--Grid column-->
-
-                                    <!--Grid column-->
-                                    <div class="col-md-5">
-
-                                        <!--Grid row-->
-                                        <div class="row pb-4 d-flex justify-content-center mb-4">
-
-                                            <h4 class="mt-3 mr-4">
-                                                <strong>Login with</strong>
-                                            </h4>
-
-                                            <div class="inline-ul text-center d-flex justify-content-center">
-                                                <a class="p-2 m-2 fa-lg tw-ic">
-                                                    <i class="fa fa-twitter fa-lg indigo-text"></i>
-                                                </a>
-                                                <a class="p-2 m-2 fa-lg li-ic">
-                                                    <i class="fa fa-linkedin fa-lg indigo-text"> </i>
-                                                </a>
-                                                <a class="p-2 m-2 fa-lg ins-ic">
-                                                    <i class="fa fa-instagram fa-lg indigo-text"> </i>
-                                                </a>
-                                            </div>
-
-                                            <h4 class="mt-3 ml-4">
-                                                <strong>or:</strong>
-                                            </h4>
-
-                                        </div>
-                                        <!--/Grid row-->
-
-                                        <!--Body-->
-                                        <div class="md-form">
+                                            <!--Body-->
                                             <div class="md-form">
+                                                <div class="md-form">
 
-                                                <select class="mdb-select" name="sCategoria">
+                                                    <select class="mdb-select" name="sDepartamentos">
+                                                        <%
+                                                            listarDepa = depa.showDepastamentos();
+                                                            for (ClsDepartamentos elem : listarDepa) {
 
-                                                    <option value="1">Departamento</option>
-                                                    <option value="1">opcion</option>
-                                                    <option value="1">opcion</option>
+
+                                                        %>
+                                                        <option value="<%=elem.getId()%>"><%=elem.getNombre()%></option>
+                                                        <%
+                                                            }
+                                                        %>
 
 
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="md-form">
-                                            <i class="fa fa-building prefix"></i>
-                                            <input type="text" id="orangeForm-email" class="form-control">
-                                            <label for="orangeForm-email">Municipio</label>
-                                        </div>
-
-                                        <div class="md-form">
-                                            <i class="fa fa-road prefix"></i>
-                                            <input type="text" id="orangeForm-pass" class="form-control">
-                                            <label for="orangeForm-pass">Calle</label>
-                                        </div>
-                                        <div class="md-form">
-                                            <i class="fa fa-map-signs prefix"></i>
-                                            <input type="text" id="orangeForm-pass" class="form-control">
-                                            <label for="orangeForm-pass">Lugar Ref.</label>
-                                        </div>
-                                        <div class="md-form">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <i class="fa fa-phone prefix"></i>
-                                                    <input type="text" id="orangeForm-pass" class="form-control">
-                                                    <label for="orangeForm-pass">Telefono</label>
-                                                </div>
-                                                <div class="col-6">
-                                                    <i class="fa fa-phone prefix"></i>
-                                                    <input type="text" id="orangeForm-pass" class="form-control">
-                                                    <label for="orangeForm-pass">Telefono</label>
+                                                    </select>
                                                 </div>
                                             </div>
+                                            <div class="md-form">
+                                                <i class="fa fa-building prefix"></i>
+                                                <input type="text" id="orangeForm-email" class="form-control" name="Municipio">
+                                                <label for="orangeForm-email">Municipio</label>
+                                            </div>
 
+                                            <div class="md-form">
+                                                <i class="fa fa-road prefix"></i>
+                                                <input type="text" id="orangeForm-pass" class="form-control" name="Calle">
+                                                <label for="orangeForm-pass">Calle</label>
+                                            </div>
+                                            <div class="md-form">
+                                                <i class="fa fa-map-signs prefix"></i>
+                                                <input type="text" id="orangeForm-pass" class="form-control" name="lugarRef">
+                                                <label for="orangeForm-pass">Lugar Ref.</label>
+                                            </div>
+                                            <div class="md-form">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <i class="fa fa-phone prefix"></i>
+                                                        <input type="text" id="orangeForm-pass" class="form-control" name="Tel1">
+                                                        <label for="orangeForm-pass">Telefono</label>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <i class="fa fa-phone prefix"></i>
+                                                        <input type="text" id="orangeForm-pass" class="form-control"name="Tel2">
+                                                        <label for="orangeForm-pass">Telefono</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <input name="usuarioID" type="hidden" value="<%=request.getAttribute("codigo")%>">
 
+                                            </div>
+                                            <div class="text-center">
+                                                <button 
+                                                    class="btn btn-indigo btn-rounded mt-5"
+                                                    name="btnEnviar"
+                                                    >Listo</button>
+                                            </div>
                                         </div>
-
-
-                                        <div class="text-center">
-                                            <button class="btn btn-indigo btn-rounded mt-5">Sign up</button>
-                                        </div>
-
+                                        <!--Grid column-->
                                     </div>
-                                    <!--Grid column-->
-
+                                    <!--Grid row-->
                                 </div>
-                                <!--Grid row-->
-
                             </div>
-                        </div>
-
+                        </form>
                     </div>
                     <!--Grid column-->
 

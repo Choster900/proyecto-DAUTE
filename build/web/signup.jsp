@@ -123,7 +123,7 @@
                                     <div class="text-center">
                                         <button class="btn purple-gradient btn-lg" name="btnSignup">Sign up</button>
                                         <hr>
-                                        <a class="p-2 m-2 fa-lg tw-ic">!Crear Usuario!</a>
+                                        <a class="p-2 m-2 fa-lg tw-ic" href="${pageContext.request.contextPath}/createaccount.jsp">!Crear Usuario!</a>
                                         <div class="inline-ul text-center d-flex justify-content-center">
                                             <a class="p-2 m-2 fa-lg tw-ic"><i class="fa fa-twitter white-text"></i></a>
                                             <a class="p-2 m-2 fa-lg li-ic"><i class="fa fa-linkedin white-text"> </i></a>

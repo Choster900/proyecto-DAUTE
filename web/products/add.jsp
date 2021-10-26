@@ -12,7 +12,7 @@
 <%@include file="../layout/navbar.jsp" %>
 <%!
     CategoriasDAO daoCategoria = new CategoriasDAO();
-    ArrayList<ClsCategorias> listaCate = new ArrayList();
+    ArrayList<ClsCategorias> listaCate = new ArrayList<>();
 
 %>
 <main>
