@@ -24,6 +24,10 @@
         <servlet-name>DireccionServlet</servlet-name>
         <servlet-class>Controller.DireccionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>compra_generada</servlet-name>
+        <servlet-class>Controller.compra_generada</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/ProductoServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>DireccionServlet</servlet-name>
         <url-pattern>/DireccionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>compra_generada</servlet-name>
+        <url-pattern>/compra_generada</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

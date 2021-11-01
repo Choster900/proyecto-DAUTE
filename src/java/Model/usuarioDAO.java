@@ -9,6 +9,8 @@ import Conexion.ClsConexion;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +27,7 @@ public class usuarioDAO extends ClsConexion {
             pre.setString(1, u.getName());
             pre.setString(2, u.getEmail());
             pre.setString(3, u.getFoto());
-            pre.setString(4,getMD5(u.getPass()) );
+            pre.setString(4, getMD5(u.getPass()));
             pre.setInt(5, u.getRol());
             pre.setInt(6, u.getTypeSub());
             pre.setString(7, u.getGenero());
@@ -54,4 +56,53 @@ public class usuarioDAO extends ClsConexion {
             throw new RuntimeException(e);
         }
     }
+
+    public ArrayList<ClsUsuarios> showUser(int UserCode) {
+        ArrayList<ClsUsuarios> lista = new ArrayList<>();
+        try {
+            this.conectar();
+            String sql = "SELECT \n"
+                    + "    S.ID,\n"
+                    + "    NICKNAME,\n"
+                    + "    FOTO,\n"
+                    + "    EMAIL,\n"
+                    + "    IF(TIPO_SUSCRIPCION = 1,\n"
+                    + "        'ESTANDAR',\n"
+                    + "        'PREMIUN'),\n"
+                    + "    GENERO,\n"
+                    + "    D.TELEFONO,\n"
+                    + "    DEPA.NOMBRE\n"
+                    + "FROM\n"
+                    + "    USUARIO S\n"
+                    + "        INNER JOIN\n"
+                    + "    DIRECCION D ON S.ID = D.USUARIO_ID\n"
+                    + "            INNER JOIN\n"
+                    + "    DEPARTAMENTOS DEPA ON D.DEPARTAMENTO_ID = DEPA.ID WHERE S.ID = " + UserCode;
+            PreparedStatement pre = this.getConexion().prepareStatement(sql);
+            ResultSet rs;
+
+            rs = pre.executeQuery();
+
+            while (rs.next()) {
+                ClsUsuarios user = new ClsUsuarios();
+                user.setCodigoUsuario(rs.getInt(1));
+                user.setName(rs.getString(2));
+                user.setFoto(rs.getString(3));
+                user.setEmail(rs.getString(4));
+                user.setTypeSubNombre(rs.getString(5));
+                user.setGenero(rs.getString(6));
+                
+
+                lista.add(user);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.getMessage());
+
+        } finally {
+            this.desconectar();
+        }
+        return lista;
+    }
+
 }

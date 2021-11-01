@@ -63,14 +63,32 @@
                     </h2>
                     <span class="badge badge-danger product mb-4 ml-xl-0 ml-4">bestseller</span>
                     <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
+                        <%
+                        int sub = (Integer) la_session.getAttribute("typeSub");
+                            if (sub == 2) {
+                                double tot = prod.get(0).getPrecio() * 0.1;
+                        %>
                         <span class="red-text font-weight-bold">
-                            <strong>$<%=prod.get(0).getPrecio()%></strong>
+                            <strong>$<%=prod.get(0).getPrecio()-tot%></strong>
                         </span>
                         <span class="grey-text">
                             <small>
-                                <s>$49</s>
+                                <p>descuento $<%=String.format("%.2f", prod.get(0).getPrecio())  %></p>
                             </small>
                         </span>
+                        <%
+                            }else{
+                        %>
+                       <span class="red-text font-weight-bold">
+                            <strong>$<%=prod.get(0).getPrecio()%></strong>
+                        </span>
+                        <%
+                            }
+                        %>
+                        
+                        <%
+                            
+                        %>
                     </h3>
 
                     <!--Accordion wrapper-->
@@ -132,31 +150,7 @@
                     <!-- Add to Cart -->
                     <section class="color">
                         <div class="mt-5">
-                            <p class="grey-text">Choose your color</p>
-                            <div class="row text-center text-md-left">
-
-                                <div class="col-md-4 col-12 ">
-                                    <!--Radio group-->
-                                    <div class="form-group">
-                                        <input name="group100" type="radio" id="radio100" checked="checked">
-                                        <label for="radio100" class="dark-grey-text">Blue</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <!--Radio group-->
-                                    <div class="form-group">
-                                        <input name="group100" type="radio" id="radio101">
-                                        <label for="radio101" class="dark-grey-text">Orange</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <!--Radio group-->
-                                    <div class="form-group">
-                                        <input name="group100" type="radio" id="radio102">
-                                        <label for="radio102" class="dark-grey-text">Red</label>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <div class="row mt-3 mb-4">
                                 <div class="col-md-12 text-center text-md-left text-md-right">
@@ -181,155 +175,6 @@
 
     <div class="divider-new">
         <h3 class="h3-responsive font-weight-bold blue-text mx-3">Product Reviews</h3>
-    </div>
-
-    <!-- Product Reviews -->
-    <section id="reviews" class="pb-5">
-
-        <!--Main wrapper-->
-        <div class="comments-list text-center text-md-left">
-
-            <!--First row-->
-            <div class="row mb-5">
-                <!--Image column-->
-                <div class="col-sm-2 col-12 mb-3">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="sample image" class="avatar rounded-circle z-depth-1-half">
-                </div>
-                <!--/.Image column-->
-
-                <!--Content column-->
-                <div class="col-sm-10 col-12">
-                    <a>
-                        <h5 class="user-name font-weight-bold">John Doe</h5>
-                    </a>
-                    <!-- Rating -->
-                    <ul class="rating">
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                    </ul>
-                    <div class="card-data">
-                        <ul class="list-unstyled mb-1">
-                            <li class="comment-date font-small grey-text">
-                                <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                        </ul>
-                    </div>
-                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-                <!--/.Content column-->
-            </div>
-            <!--/.First row-->
-
-            <!--Second row-->
-            <div class="row mb-5">
-                <!--Image column-->
-                <div class="col-sm-2 col-12 mb-3">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg" alt="sample image" class="avatar rounded-circle z-depth-1-half">
-                </div>
-                <!--/.Image column-->
-
-                <!--Content column-->
-                <div class="col-sm-10 col-12">
-                    <a>
-                        <h5 class="user-name font-weight-bold">Lily Brown</h5>
-                    </a>
-                    <!-- Rating -->
-                    <ul class="rating">
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                    </ul>
-                    <div class="card-data">
-                        <ul class="list-unstyled mb-1">
-                            <li class="comment-date font-small grey-text">
-                                <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                        </ul>
-                    </div>
-                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-                <!--/.Content column-->
-            </div>
-            <!--/.Second row-->
-
-            <!--Third row-->
-            <div class="row mb-5">
-                <!--Image column-->
-                <div class="col-sm-2 col-12 mb-3">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (28).jpg" alt="sample image" class="avatar rounded-circle z-depth-1-half">
-                </div>
-                <!--/.Image column-->
-                <!--Content column-->
-                <div class="col-sm-10 col-12">
-                    <a>
-                        <h5 class="user-name font-weight-bold">Martha Smith</h5>
-                    </a>
-                    <!-- Rating -->
-                    <ul class="rating">
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star blue-text"></i>
-                        </li>
-                    </ul>
-                    <div class="card-data">
-                        <ul class="list-unstyled mb-1">
-                            <li class="comment-date font-small grey-text">
-                                <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                        </ul>
-                    </div>
-                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-                <!--/.Content column-->
-            </div>
-            <!--/.Third row-->
-        </div>
-        <!--/.Main wrapper-->
-
-    </section>
-    <!-- /.Product Reviews -->
-
-    <div class="divider-new">
-        <h3 class="h3-responsive font-weight-bold blue-text mx-3">Related Products</h3>
     </div>
 
     <!--Section: Products v.5-->
@@ -404,22 +249,66 @@
                                 <span class="badge badge-danger mb-2">bestseller</span>
                                 <!-- Rating -->
                                 <ul class="rating">
-                                    <li>
-                                        <i class="fa fa-star blue-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star blue-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star blue-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star blue-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star grey-text"></i>
-                                    </li>
-                                </ul>
+                                                    <%
+                                                        int veces = elem.getVecesVendido();
+                                                        if (veces >= 0 && veces <= 5) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else if (veces >= 6 && veces <= 10) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                        }else{
+                                                    %>
+                                                     <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                     <%
+}
+                                                    %>
+
+                                                </ul>
 
                                 <!--Card footer-->
                                 <div class="card-footer pb-0">
@@ -459,21 +348,6 @@
 
                     <%                    }
                     %>
-
-
-
-                    <!--First slide-->
-
-
-
-
-
-                    <!--First slide-->
-
-
-
-
-
                 </div>
                 <!--Slides-->
 

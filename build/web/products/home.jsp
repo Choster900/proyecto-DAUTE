@@ -14,6 +14,14 @@
     productoDAO daoProducto = new productoDAO();
     ArrayList<ClsProducto> listapro = new ArrayList();
 %>
+<%
+    HttpSession s = request.getSession();
+
+    if ((Integer) s.getAttribute("nivel") != 3) {
+        response.sendRedirect("signup.jsp");
+    }
+
+%>
 <main>
     <!-- Main Container -->
     <div class="container">
@@ -50,14 +58,13 @@
                     <!-- /.Table head -->
                     <!-- Table body -->
                     <tbody>
-                        <%
-                            listapro = daoProducto.productosHome();
+                        <%                            listapro = daoProducto.productosHome();
                             for (ClsProducto elem : listapro) {
                         %>
                         <!-- First row -->
                         <tr>
                             <th scope="row">
-                                <img src="<%=elem.getRutaImagen() %>" alt="" class="img-fluid z-depth-0">
+                                <img src="<%=elem.getRutaImagen()%>" alt="" class="img-fluid z-depth-0">
                             </th>
                             <td>
                                 <h5 class="mt-3">
@@ -66,7 +73,7 @@
                                 <p class="text-muted"><%=elem.getNombreCategoria()%></p>
                             </td>
                             <!--<td><%=elem.getDescripcion()%></td>-->
-                             <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </td>
+                            <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </td>
                             <td></td>
                             <td>$<%=elem.getPrecio()%></td>
                             <td class="text-center text-md-left">
@@ -80,7 +87,7 @@
                                 <%=elem.getNombreCategoria()%>
                             </td>
                             <td>
-                                <a type="button" href="http://localhost:8080/project/products/update.jsp?code=<%=elem.getCodigoProducot() %>" class="btn btn-sm btn-outline-warning" data-toggle="tooltip" data-placement="top" title="Remove item">Editar
+                                <a type="button" href="http://localhost:8080/project/products/update.jsp?code=<%=elem.getCodigoProducot()%>" class="btn btn-sm btn-outline-warning" data-toggle="tooltip" data-placement="top" title="Remove item">Editar
                                 </a>
                             </td>
                         </tr>

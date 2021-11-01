@@ -16,7 +16,7 @@
         <li>
             <div class="logo-wrapper waves-light">
                 <a href="${pageContext.request.contextPath}/homepage.jsp">
-                    <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
+                    <img src="https://www.emprendedores.es/wp-content/uploads/2017/07/vino-vino.png" class="img-fluid flex-center">
                 </a>
             </div>
         </li>
@@ -90,8 +90,18 @@
                                 <a href="${pageContext.request.contextPath}/products/category.jsp?class=3" class="waves-effect">Vinos</a>
                             </li>
                             <li>
-                                <a href="../category/category-v4.html" class="waves-effect">Category V.4</a>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=4" class="waves-effect">Utensilios</a>
                             </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=6" class="waves-effect">Seguridad</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=5" class="waves-effect">Cocina</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/products/category.jsp?class=7" class="waves-effect">Electrodomesticos</a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </li>
@@ -151,7 +161,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <a class="navbar-brand font-weight-bold" href="http://localhost:8080/project/homepage.jsp">
+            <a class="navbar-brand font-weight-bold" href="${pageContext.request.contextPath}/homepage.jsp">
                 <strong>amantes del vino</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
@@ -173,9 +183,9 @@
                     <li class="nav-item dropdown ml-3">
                         <a class="nav-link dropdown-toggle waves-effect waves-light dark-grey-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-user blue-text"></i> <%=la_session.getAttribute("usuario")%>  <%=la_session.getAttribute("codigo")%></a>
+                            <i class="fa fa-user blue-text"></i> <%=la_session.getAttribute("usuario")%>  <%--=la_session.getAttribute("codigo")--%></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
-                            <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
+                            <a class="dropdown-item waves-effect waves-light" href="${pageContext.request.contextPath}/user/profile.jsp">My account</a>
                             <a class="dropdown-item waves-effect waves-light" href="${pageContext.request.contextPath}/signup.jsp?signout=true">Log out</a>
                         </div>
                     </li>

@@ -19,6 +19,14 @@
 
 %>
 <%
+    HttpSession s = request.getSession();
+
+    if ((Integer) s.getAttribute("nivel") != 3) {
+        response.sendRedirect("signup.jsp");
+    }
+
+%>
+<%
     int codigo = Integer.parseInt(request.getParameter("code"));
     ArrayList<ClsProducto> filtrado = new ArrayList<ClsProducto>();
     filtrado = daoPro.traerInfo(codigo);

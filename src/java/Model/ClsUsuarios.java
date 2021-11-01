@@ -18,6 +18,7 @@ public class ClsUsuarios {
     private String pass;
     private int rol;
     private int typeSub;
+    private String typeSubNombre;
     private String genero;
 
     private String create_at;
@@ -117,6 +118,13 @@ public class ClsUsuarios {
 
     public void setCreate_at(String create_at) {
         this.create_at = create_at;
+    }
+    public String getTypeSubNombre() {
+        return typeSubNombre;
+    }
+
+    public void setTypeSubNombre(String typeSubNombre) {
+        this.typeSubNombre = typeSubNombre;
     }
 
 }

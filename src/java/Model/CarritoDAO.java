@@ -33,7 +33,7 @@ public class CarritoDAO extends ClsConexion {
                     + "    CARRITO_DE_COMPRAS C\n"
                     + "        INNER JOIN\n"
                     + "    PRODUCTOS P ON P.ID = C.ID_PRODUCTO\n"
-                    + "		INNER JOIN CATEGORIA CA ON CA.ID = P.CATEGORIA_ID WHERE ESTADO_VENTA = 0 AND C.ID_USUARIO = "+code+" ORDER BY C.ID ASC";
+                    + "		INNER JOIN CATEGORIA CA ON CA.ID = P.CATEGORIA_ID WHERE ESTADO_VENTA = 0 AND C.ID_USUARIO = " + code + " ORDER BY C.ID ASC";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             ResultSet rs;
 
@@ -60,8 +60,8 @@ public class CarritoDAO extends ClsConexion {
         }
         return lista;
     }
-    
-       public void insertCarrito_de_compras(ClsCart c) {
+
+    public void insertCarrito_de_compras(ClsCart c) {
         try {
             this.conectar();
             String sql = "CALL SP_INSERT_CARRITO(?,?,?)";
@@ -79,13 +79,14 @@ public class CarritoDAO extends ClsConexion {
             this.desconectar();
         }
     }
-              public void delete_carrito(ClsCart c) {
+
+    public void delete_carrito(ClsCart c) {
         try {
             this.conectar();
             String sql = "CALL SP_DELETE_CARRITO(?)";
             PreparedStatement pre = this.getConexion().prepareStatement(sql);
             pre.setInt(1, c.getCodigoCarrito());
-         
+
             pre.executeUpdate();
 
         } catch (Exception e) {
@@ -94,6 +95,25 @@ public class CarritoDAO extends ClsConexion {
         } finally {
             this.desconectar();
         }
+    }
+
+    public double getTotalCarrito(int code) {
+        double total = 0;
+        try {
+            this.conectar();
+            String sql = "SELECT FORMAT(SUM(PRECIO-DESCUENTO),2) FROM CARRITO_DE_COMPRAS WHERE ID_USUARIO = "+code+ " AND ESTADO_VENTA = 0";
+            PreparedStatement pre = this.getConexion().prepareStatement(sql);
+            ResultSet rs;
+            rs = pre.executeQuery();
+            while (rs.next()) {
+                total = rs.getDouble(1);
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        } finally {
+            this.desconectar();
+        }
+        return total;
     }
 
 }

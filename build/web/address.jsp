@@ -9,6 +9,7 @@
     departamentosDAO depa = new departamentosDAO();
     ArrayList<ClsDepartamentos> listarDepa = new ArrayList<>();
 %>
+
 <style>
     html,
     body,

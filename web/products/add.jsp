@@ -15,6 +15,14 @@
     ArrayList<ClsCategorias> listaCate = new ArrayList<>();
 
 %>
+<%
+    HttpSession s = request.getSession();
+
+    if ((Integer) s.getAttribute("nivel") != 3) {
+        response.sendRedirect("signup.jsp");
+    }
+
+%>
 <main>
     <div class="container">
         <form method="POST" action="../ProductoServlet" enctype='multipart/form-data'>

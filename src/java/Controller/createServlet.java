@@ -64,7 +64,7 @@ public class createServlet extends HttpServlet {
             String nombre = req.getParameter("Name");
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-            int rol = 3;
+            int rol = 1;
             int typeSub = Integer.parseInt(req.getParameter("tipoSuscripcion"));
             String genero = req.getParameter("genero");
 

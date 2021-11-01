@@ -23,6 +23,7 @@
 <%@include file="layout/navbar.jsp" %>
 
 <!--Intro-->
+
 <section>
 
     <!--Carousel Wrapper-->
@@ -145,235 +146,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
                     <!-- Links -->
-                    <ul class="navbar-nav mr-auto">
+                    <%                        try {
+                            if ((Integer) la_session.getAttribute("nivel") == 3) {
 
-                        <li class="nav-item dropdown mega-dropdown active">
-                            <a class="nav-link dropdown-toggle  no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptop</a>
-                            <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
-                                <div class="row mx-md-4 mx-1">
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Brand</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item mb-0" href="">Sony</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Lenovo</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Apple</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Dell</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Asus</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-md-5 mt-4 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Sales</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptops Up to 50% Off </a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptops under $399</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptops Up to 50% Off</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptops for designers</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptops for developers</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Processor Type</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Intel Core i5 4th Gen.</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Intel Core i5 5th Gen.</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Intel Core i5 3th Gen.</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Intel Core i5 6th Gen.</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Intel Core i5 7th Gen.</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-5">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Customers opinions</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Totam rem aperiam eaque</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Beatae vitae dicta sun</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Quae ab illo inventore</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Nemo enim ipsam</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Neque porro quisquam est</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cameras</a>
-                            <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
-                                <div class="row mx-md-4 mx-1">
-                                    <div class="col-md-12 col-lg-4 sub-menu my-lg-5 mt-5 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Featured</h6>
-                                        <!--Featured image-->
-                                        <div class="view overlay mb-3 z-depth-1">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/9.jpg" class="img-fluid" alt="First sample image">
-                                            <div class="mask flex-center rgba-white-slight">
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                        <h4 class="mb-2">
-                                            <a class="news-title-2 pl-0" href="">Lorem ipsum dolor sit</a>
-                                        </h4>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 sub-menu my-lg-5 my-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Brands</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Canon</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Nikon</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Sony</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">GoPro</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Samsung</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 sub-menu my-lg-5 my-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Accesories</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Excepteur sint</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Sunt in culpa</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Sed ut perspiciatis</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Mollit anim id est</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Accusantium doloremque</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesories</a>
-                            <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
-                                <div class="row mx-md-4 mx-1">
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Featured</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item mb-0" href="">Mouse</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Printer</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Laptop bags</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Software</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Headphones</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-md-5 mt-4 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Related</h6>
-                                        <!--Featured image-->
-                                        <div class="view overlay mb-3 z-depth-1">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(43).jpg" class="img-fluid" alt="First sample image">
-                                            <div class="mask flex-center rgba-white-slight">
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                        <h4 class="mb-2">
-                                            <a class="news-title-2 pl-0" href="">Lorem ipsum dolor sit</a>
-                                        </h4>
-                                        <p class="font-small text-uppercase dark-grey-text">
-                                            <i class="fa fa-clock-o pr-2" aria-hidden="true"></i>July 17, 2017 /
-                                            <i class="fa fa-comments-o px-1" aria-hidden="true"></i> 20</p>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">Bestseller</h6>
-                                        <!--Featured image-->
-                                        <div class="view overlay mb-3 z-depth-1">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/6.jpg" class="img-fluid" alt="First sample image">
-                                            <div class="mask flex-center rgba-white-slight">
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                        <h4 class="mb-2">
-                                            <a class="news-title-2 pl-0" href="">Ut labore et dolore magna</a>
-                                        </h4>
-                                        <p class="font-small text-uppercase dark-grey-text">
-                                            <i class="fa fa-clock-o pr-2" aria-hidden="true"></i>July 16, 2017 /
-                                            <i class="fa fa-comments-o px-1" aria-hidden="true"></i> 25</p>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-5">
-                                        <h6 class="sub-title text-uppercase font-weight-bold blue-text">
-                                            Customers opinion</h6>
-                                        <ul class="caret-style pl-0">
-                                            <li class="">
-                                                <a class="menu-item" href="">Totam rem aperiam eaque</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Beatae vitae dicta sun</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Quae ab illo inventore</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Nemo enim ipsam</a>
-                                            </li>
-                                            <li class="">
-                                                <a class="menu-item" href="">Neque porro quisquam est</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    %>
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown ml-3">
                             <a class="nav-link dropdown-toggle waves-effect waves-light dark-grey-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
@@ -384,13 +161,19 @@
                             </div>
                         </li>
                     </ul>
+                    <%                            } else {
+
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+
+                    %>
+
                     <!-- Links -->
 
-                    <form class="search-form" role="search">
-                        <div class="form-group md-form my-0 waves-light">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
+
                 </div>
                 <!-- Collapsible content -->
             </div>
@@ -443,22 +226,22 @@
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <a class="dark-grey-text font-small" href="${pageContext.request.contextPath}/products/category.jsp?class=4">
-                                        <i class="fa fa-dropboxs dark-grey-text mr-3" aria-hidden="true"></i>Utensilios</a>
+                                        <i class="fa fa-bandcamp dark-grey-text mr-3" aria-hidden="true"></i>Utensilios</a>
                                     <span class="badge badge-danger badge-pill">37</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <a class="dark-grey-text font-small">
-                                        <i class="fa fa-camera-retro dark-grey-text mr-3" aria-hidden="true"></i>Camera</a>
+                                    <a class="dark-grey-text font-small" href="${pageContext.request.contextPath}/products/category.jsp?class=6">
+                                        <i class="fa fa-camera-retro dark-grey-text mr-3" aria-hidden="true"></i>Sistema de seguridad</a>
                                     <span class="badge badge-danger badge-pill">15</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <a class="dark-grey-text font-small">
-                                        <i class="fa fa-suitcase dark-grey-text mr-3" aria-hidden="true"></i>Accesories</a>
+                                    <a class="dark-grey-text font-small" href="${pageContext.request.contextPath}/products/category.jsp?class=5">
+                                        <i class="fa fa-suitcase dark-grey-text mr-3" aria-hidden="true"></i>Para la cocina</a>
                                     <span class="badge badge-danger badge-pill">64</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <a class="dark-grey-text font-small">
-                                        <i class="fa fa-television dark-grey-text mr-3" aria-hidden="true"></i>TV</a>
+                                    <a class="dark-grey-text font-small" href="${pageContext.request.contextPath}/products/category.jsp?class=7">
+                                        <i class="fa fa-television dark-grey-text mr-3" aria-hidden="true"></i>Electrodomesticos entre otros</a>
                                     <span class="badge badge-danger badge-pill">2</span>
                                 </li>
                             </ul>
@@ -559,9 +342,49 @@
                                                         <a href="" class="dark-grey-text"><%=elem.getNombre()%></a>
                                                     </strong>
                                                 </h5>
-                                                <span class="badge badge-danger mb-2">bestseller</span>
+                                                <span class="badge badge-danger mb-2">SALE</span>
                                                 <!-- Rating -->
                                                 <ul class="rating">
+                                                    <%
+                                                        int veces = elem.getVecesVendido();
+                                                        if (veces >= 0 && veces <= 5) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else if (veces >= 6 && veces <= 10) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else {
+                                                    %>
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
@@ -577,13 +400,44 @@
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
+                                                    <%
+                                                        }
+                                                    %>
+
                                                 </ul>
 
                                                 <!--Card footer-->
                                                 <div class="card-footer pb-0">
                                                     <div class="row mb-0">
-                                                        <span class="float-left">
-                                                            <strong><%=elem.getPrecio()%></strong>
+                                                        <%
+                                                            int sub = (Integer) la_session.getAttribute("typeSub");
+                                                            if (sub == 2) {
+                                                                double tot = elem.getPrecio() * 0.10;
+                                                        %>
+                                                        <span class="float-left red-text">
+                                                            <strong><%=String.format("%.2f", elem.getPrecio() - tot)%></strong>
+                                                        </span>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <span class="float-left red-text">
+                                                            <strong><%=String.format("%.2f", elem.getPrecio())%></strong>
+                                                        </span>
+                                                        <%
+                                                            }
+                                                        %>
+                                                        <span class="grey-text">
+
+                                                            <%
+                                                                if (sub == 2) {
+                                                            %>
+
+                                                            <small>
+                                                                <s>&nbsp,<%=String.format("%.2f", elem.getPrecio())%></s>
+                                                            </small>
+                                                            <%
+                                                                }
+                                                            %>
                                                         </span>
                                                         <span class="float-right">
                                                             <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart">
@@ -654,6 +508,46 @@
                                                 <span class="badge badge-success mb-2 ml-2">SALE</span>
                                                 <!-- Rating -->
                                                 <ul class="rating">
+                                                    <%
+                                                        int veces = elem.getVecesVendido();
+                                                        if (veces >= 0 && veces <= 5) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else if (veces >= 6 && veces <= 10) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else {
+                                                    %>
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
@@ -669,19 +563,47 @@
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
+                                                    <%
+                                                        }
+                                                    %>
+
                                                 </ul>
 
                                                 <!--Card footer-->
                                                 <div class="card-footer pb-0">
                                                     <div class="row mb-0">
                                                         <h5 class="mb-0 pb-0 mt-1 font-weight-bold">
+                                                            <%
+                                                                int sub = (Integer) la_session.getAttribute("typeSub");
+                                                                if (sub == 2) {
+                                                                    double tot = elem.getPrecio() * 0.10;
+                                                            %>
+                                                            <span class="red-text">
+                                                                <strong><%=String.format("%.2f", elem.getPrecio() - tot)%></strong>
+                                                            </span>
+                                                            <%
+                                                            } else {
+                                                            %>
                                                             <span class="red-text">
                                                                 <strong><%=elem.getPrecio()%></strong>
                                                             </span>
+                                                            <%
+                                                                }
+                                                            %>
                                                             <span class="grey-text">
+
+                                                                <%
+                                                                    if (sub == 2) {
+
+
+                                                                %>
+
                                                                 <small>
-                                                                    <s>$1520</s>
+                                                                    <s><%=String.format("%.2f", elem.getPrecio())%></s>
                                                                 </small>
+                                                                <%
+                                                                    }
+                                                                %>
                                                             </span>
                                                         </h5>
 
@@ -750,6 +672,46 @@
                                                 <span class="badge badge-info mb-2">new</span>
                                                 <!-- Rating -->
                                                 <ul class="rating">
+                                                    <%
+                                                        int veces = elem.getVecesVendido();
+                                                        if (veces >= 0 && veces <= 5) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else if (veces >= 6 && veces <= 10) {
+                                                    %>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star blue-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star grey-text"></i>
+                                                    </li>
+                                                    <%
+                                                    } else {
+                                                    %>
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
@@ -765,19 +727,43 @@
                                                     <li>
                                                         <i class="fa fa-star blue-text"></i>
                                                     </li>
+                                                    <%
+                                                        }
+                                                    %>
+
                                                 </ul>
 
                                                 <!--Card footer-->
                                                 <div class="card-footer pb-0">
                                                     <div class="row mb-0">
-                                                        <span class="float-left">
+                                                        <span class="float-left red-text">
                                                             <strong><%=elem.getPrecio()%></strong>
+                                                        </span>
+                                                        <%
+                                                            int sub = (Integer) la_session.getAttribute("typeSub");
+                                                            if (sub == 2) {
+                                                                double total = elem.getPrecio() * 0.10;
+                                                        %>
+                                                        <small>
+                                                            <s>&nbsp,<%=String.format("%.2f", elem.getPrecio() - total)%></s>
+                                                        </small>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <span class="grey-text">
+                                                            <small>
+                                                                <s><%=elem.getPrecio()%></s>
+                                                            </small>
+                                                            <%
+                                                                }
+                                                            %>
                                                         </span>
                                                         <span class="float-right">
                                                             <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart">
                                                                 <i class="fa fa-shopping-cart ml-3"></i>
                                                             </a>
                                                         </span>
+
                                                     </div>
                                                 </div>
 
@@ -808,45 +794,6 @@
 
             </section>
             <!--Section: Bestsellers & offers-->
-
-            <!--Section: Advertising-->
-            <section>
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-12">
-                        <!--Image -->
-                        <div class="view  z-depth-1">
-
-                            <img src="https://mdbootstrap.com/img/Photos/Others/ecommerce5.jpg" class="img-fluid" alt="sample image">
-                            <div class="mask rgba-stylish-slight">
-                                <div class="dark-grey-text text-right pt-lg-5 pt-md-1 mr-5 pr-md-4 pr-0">
-                                    <div>
-                                        <a>
-                                            <span class="badge badge-primary">SALE</span>
-                                        </a>
-                                        <h2 class="card-title font-weight-bold pt-md-3 pt-1">
-                                            <strong>Sale from 20% to 50% on every tablet!
-                                            </strong>
-                                        </h2>
-                                        <p class="pb-lg-3 pb-md-1 clearfix d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                        <a class="btn mr-0 btn-primary btn-rounded clearfix d-none d-md-inline-block">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--Image -->
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-            </section>
-            <!--/Section: Advertising-->
 
             <!--Section: product list-->
             <section class="mb-5">
@@ -883,9 +830,28 @@
 
                                 <!-- Rating -->
                                 <ul class="rating inline-ul">
+                                    <%
+                                        int veces = elem.getVecesVendido();
+                                        if (veces >= 0 && veces <= 5) {
+                                    %>
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else if (veces >= 6 && veces <= 10) {
+                                    %>
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
@@ -898,11 +864,54 @@
                                     <li>
                                         <i class="fa fa-star grey-text"></i>
                                     </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else {
+                                    %>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <%
+                                        }
+                                    %>
+
                                 </ul>
 
                                 <!-- Price -->
                                 <h6 class="h6-responsive font-weight-bold dark-grey-text">
+                                    <%
+                                        int sub = (Integer) la_session.getAttribute("typeSub");
+                                        if (sub == 2) {
+                                            double tot = elem.getPrecio() * 0.10;
+                                    %>
+                                    <strong><%=elem.getPrecio() - tot%></strong>
+                                    <span class="grey-text">
+                                        <small>
+                                            <s><%=elem.getPrecio()%></s>
+                                        </small>
+                                    </span>
+                                    <%
+                                    } else {
+                                    %>
                                     <strong><%=elem.getPrecio()%></strong>
+                                    <%
+                                        }
+                                    %>
+                                    
                                 </h6>
 
                             </div>
@@ -948,7 +957,47 @@
                                 </a>
 
                                 <!-- Rating -->
-                                <ul class="rating inline-ul">
+                                <ul class="rating">
+                                    <%
+                                        int veces = elem.getVecesVendido();
+                                        if (veces >= 0 && veces <= 5) {
+                                    %>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else if (veces >= 6 && veces <= 10) {
+                                    %>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else {
+                                    %>
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
@@ -964,16 +1013,33 @@
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
+                                    <%
+                                        }
+                                    %>
+
                                 </ul>
 
                                 <!-- Price -->
                                 <h6 class="h6-responsive font-weight-bold dark-grey-text">
-                                    <strong><%=elem.getPrecio()%></strong>
+                                    <%
+                                        int sub = (Integer) la_session.getAttribute("typeSub");
+                                        if (sub == 2) {
+                                            double tot = elem.getPrecio() * 0.10;
+                                    %>
+                                    <strong><%=elem.getPrecio() - tot%></strong>
                                     <span class="grey-text">
                                         <small>
-                                            <s>$889</s>
+                                            <s><%=elem.getPrecio()%></s>
                                         </small>
                                     </span>
+                                    <%
+                                    } else {
+                                    %>
+                                    <strong><%=elem.getPrecio()%></strong>
+                                    <%
+                                        }
+                                    %>
+                                    
                                 </h6>
 
                             </div>
@@ -1019,10 +1085,29 @@
                                 </a>
 
                                 <!-- Rating -->
-                                <ul class="rating inline-ul">
+                                <ul class="rating">
+                                    <%
+                                        int veces = elem.getVecesVendido();
+                                        if (veces >= 0 && veces <= 5) {
+                                    %>
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else if (veces >= 6 && veces <= 10) {
+                                    %>
                                     <li>
                                         <i class="fa fa-star blue-text"></i>
                                     </li>
@@ -1035,16 +1120,54 @@
                                     <li>
                                         <i class="fa fa-star grey-text"></i>
                                     </li>
+                                    <li>
+                                        <i class="fa fa-star grey-text"></i>
+                                    </li>
+                                    <%
+                                    } else {
+                                    %>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <%
+                                        }
+                                    %>
+
                                 </ul>
 
                                 <!-- Price -->
                                 <h6 class="h6-responsive font-weight-bold dark-grey-text">
-                                    <strong><%=elem.getPrecio()%></strong>
+                                    <%
+                                        int sub = (Integer) la_session.getAttribute("typeSub");
+                                        if (sub == 2) {
+                                            double tot = elem.getPrecio() * 0.10;
+                                    %>
+                                    <strong><%=elem.getPrecio() - tot%></strong>
                                     <span class="grey-text">
                                         <small>
-                                            <s>$889</s>
+                                            <s><%=elem.getPrecio()%></s>
                                         </small>
                                     </span>
+                                    <%
+                                    } else {
+                                    %>
+                                    <strong><%=elem.getPrecio()%></strong>
+                                    <%
+                                        }
+                                    %>
+                                    
                                 </h6>
 
                             </div>
